@@ -635,17 +635,14 @@
   <section class="technology-slider">
     <div class="container">
       <h2 class="section-title text-center">Our Technology Stack</h2>
-      <div class="slider">
-        <div class="slide"><span class="tech-name">Django</span></div>
-        <div class="slide"><span class="tech-name">Flask</span></div>
-        <div class="slide"><span class="tech-name">React</span></div>
-        <div class="slide"><span class="tech-name">RAG</span></div>
-        <div class="slide"><span class="tech-name">Flutter</span></div>
-        <div class="slide"><span class="tech-name">Bootstrap</span></div>
-        <div class="slide"><span class="tech-name">Angular</span></div>
-        <div class="slide"><span class="tech-name">Flutter</span></div>
-        <div class="slide"><span class="tech-name">Node.js</span></div>
-        <div class="slide"><span class="tech-name">Sqlite</span></div>
+<div class="slider">
+        <div class="slide"><img src="Stack logos/django.png" alt="Django" class="tech-icon"></div>
+        <div class="slide"><img src="Stack logos/flask.png" alt="Flask" class="tech-icon"></div>
+        <div class="slide"><img src="Stack logos/react.png" alt="React" class="tech-icon"></div>
+        <div class="slide"><img src="Stack logos/flutter.png" alt="Flutter" class="tech-icon"></div>
+        <div class="slide"><img src="Stack logos/angular.png" alt="Angular" class="tech-icon"></div>
+        <div class="slide"><img src="Stack logos/nodejs.png" alt="Node.js" class="tech-icon"></div>
+        <div class="slide"><img src="Stack logos/sqlite.png" alt="Sqlite" class="tech-icon"></div>
       </div>
     </div>
   </section>
@@ -673,6 +670,19 @@
       transform: scale(1.2);
       color: var(--purple-primary);
       text-shadow: 0 0 20px var(--purple-primary);
+    }
+    
+    .tech-icon {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      filter: grayscale(100%) brightness(150%);
+      transition: all 0.3s ease;
+    }
+    
+    .slide:hover .tech-icon {
+      filter: grayscale(0%) brightness(100%);
+      transform: scale(1.2);
     }
     
     .tech-name {
@@ -705,6 +715,7 @@
     });
   </script>
 
+  <div class="divider"></div>
   <!-- Project Statistics Section -->
   <section id="project-stats" class="py-5" style="background-color: #000;">
     <div class="container">
@@ -718,7 +729,9 @@
         <div class="col-md-4">
           <div class="stats-card" style="border: 2px solid var(--purple-primary); border-radius: 16px; padding: 30px; text-align: center; background: linear-gradient(135deg, #000000, #1a0033);">
             <div class="stats-icon mb-3">
-              <i class="bi bi-check-circle-fill" style="font-size: 3rem; color: var(--purple-primary);"></i>
+              <div class="animated-icon success-icon">
+                <i class="bi bi-check-circle-fill"></i>
+              </div>
             </div>
             <h3 class="counter-value" data-target="5" style="font-size: 2.5rem; font-weight: 800; color: var(--purple-primary); margin-bottom: 10px;">0</h3>
             <p style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Successful Projects</p>
@@ -730,11 +743,13 @@
         <div class="col-md-4">
           <div class="stats-card" style="border: 2px solid var(--purple-primary); border-radius: 16px; padding: 30px; text-align: center; background: linear-gradient(135deg, #000000, #1a0033);">
             <div class="stats-icon mb-3">
-              <i class="bi bi-gear-fill" style="font-size: 3rem; color: var(--purple-primary);"></i>
+              <div class="animated-icon progress-icon">
+                <i class="bi bi-gear-fill"></i>
+              </div>
             </div>
             <h3 class="counter-value" data-target="3" style="font-size: 2.5rem; font-weight: 800; color: var(--purple-primary); margin-bottom: 10px;">0</h3>
             <p style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Projects in Progress</p>
-            <p style="color: #cccccc; font-size: 0.9rem;">Currently being develop with cutting-edge tech</p>
+            <p style="color: #cccccc; font-size: 0.9rem;">Currently being developed with cutting-edge tech</p>
           </div>
         </div>
         
@@ -742,7 +757,9 @@
         <div class="col-md-4">
           <div class="stats-card" style="border: 2px solid var(--purple-primary); border-radius: 16px; padding: 30px; text-align: center; background: linear-gradient(135deg, #000000, #1a0033);">
             <div class="stats-icon mb-3">
-              <i class="bi bi-emoji-smile-fill" style="font-size: 3rem; color: var(--purple-primary);"></i>
+              <div class="animated-icon client-icon">
+                <i class="bi bi-emoji-smile-fill"></i>
+              </div>
             </div>
             <h3 class="counter-value" data-target="5" style="font-size: 2.5rem; font-weight: 800; color: var(--purple-primary); margin-bottom: 10px;">0</h3>
             <p style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Happy Clients</p>
@@ -761,6 +778,49 @@
     .stats-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 20px rgba(161, 0, 255, 0.4);
+    }
+
+    .animated-icon {
+      font-size: 3rem;
+      color: var(--purple-primary);
+      position: relative;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .success-icon {
+      animation: pulse 2s infinite;
+    }
+
+    .progress-icon {
+      animation: rotate 3s infinite linear;
+    }
+
+    .client-icon {
+      animation: bounce 2s infinite;
+    }
+
+    .stats-card:hover .animated-icon {
+      transform: scale(1.2);
+      color: #ffffff;
+      text-shadow: 0 0 20px var(--purple-primary);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
     }
   </style>
 

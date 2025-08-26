@@ -21,6 +21,35 @@
       --amber:#A100FF;
       --smoke:#333333;
     }
+    /* Image wrapper with placeholder */
+.image-wrapper {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 2px solid #A100FF;
+  background: linear-gradient(135deg, #222, #444); /* Placeholder while loading */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Optimize team images */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+/* Show smoothly when loaded */
+.image-wrapper img.loaded {
+  opacity: 1;
+}
 
     /* Loading Spinner */
     .loading-spinner {
@@ -326,11 +355,7 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="team-card">
-            <img src="selva karthick.jpg" alt="R.Shri tharani">
-            <h5><span>Selva Karthick</span></h5>
-            <p>Software Developer</p>
-          </div>
+          
         </div>
         <div class="col-md-3">
           <div class="team-card">
@@ -348,7 +373,13 @@
         </div>
         <div class="col-md-3">
           <div class="team-card">
-            <img src="Sri tharani.jpg" alt="Dharani Kumar">
+            <img src="Sri<div class="team-card">
+  <div class="image-wrapper">
+    <img src="Rajesh.jpg" alt="Rajesh Kanna" loading="lazy">
+  </div>
+  <h5><span>Rajesh Kanna</span></h5>
+  <p>HR & Project Manager</p>
+          </div> tharani.jpg" alt="Dharani Kumar">
             <h5><span>Shri tharani</span></h5>
             <p>Software Developer</p>
           </div>
@@ -440,6 +471,11 @@
 
   <!-- Loading Spinner Script -->
   <script>
+    document.querySelectorAll('.image-wrapper img').forEach(img => {
+      img.addEventListener('load', () => {
+        img.classList.add('loaded');
+      });
+    });
     // Show loading spinner
     const loadingSpinner = document.createElement('div');
     loadingSpinner.className = 'loading-spinner';
@@ -463,5 +499,6 @@
   </script>
 </body>
 </html>
+
 
 

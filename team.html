@@ -177,7 +177,7 @@
       background-color: #A100FF;
       padding: 8px 16px;
       border-radius: 20px;
-      display: inline-block;
+      display: block;
       position: relative;
       overflow: hidden;
     }
@@ -206,6 +206,25 @@
       padding: 4px 12px;
       border-radius: 15px;
       margin-top: 8px;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .team-card {
+        padding: 16px;
+      }
+      .team-card img {
+        width: 120px;
+        height: 120px;
+      }
+      .team-card h5 {
+        font-size: 14px;
+        padding: 6px 12px;
+      }
+      .team-card p {
+        font-size: 12px;
+        padding: 3px 8px;
+      }
     }
     img:focus, a:focus, button:focus {
       outline: none !important;
@@ -320,56 +339,56 @@
       <div class="row g-4 justify-content-center">
         <div class="col-md-3">
           <div class="team-card">
-            <img src="Rajesh.jpg" alt="Rajesh kanna">
+            <img src="src/Rajesh.jpg" alt="Rajesh kanna">
             <h5><span>Rajesh Kanna</span></h5>
             <p>Project & HR Manager</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="team-card">
-            <img src="selva karthick.jpg" alt="R.Shri tharani">
+            <img src="src/selva karthick.jpg" alt="R.Shri tharani">
             <h5><span>Selva Karthick</span></h5>
             <p>Software Developer</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="team-card">
-            <img src="dharani.jpg" alt="R.Yogeshwaran">
+            <img src="src/dharani.jpg" alt="R.Yogeshwaran">
             <h5><span>Dharani</span></h5>
             <p>Software Engineer</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="team-card">
-            <img src="munish.png" alt="B.Munish Karthikeyan">
+            <img src="src/munish.png" alt="B.Munish Karthikeyan">
             <h5><span>Munish Karthikeyan</span></h5>
             <p>Software Developer</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="team-card">
-            <img src="Sri tharani.jpg" alt="Dharani Kumar">
+            <img src="src/Sri tharani.jpg" alt="Dharani Kumar">
             <h5><span>Shri tharani</span></h5>
             <p>Software Engineer</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="team-card">
-            <img src="yogesh.png" alt="K.Selva Karthick">
+            <img src="src/yogesh.png" alt="K.Selva Karthick">
             <h5><span>Yogeshwaran</span></h5>
             <p>Software Developer</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="team-card">
-            <img src="vishnu.jpg" alt="R.Vishnu">
+            <img src="src/vishnu.jpg" alt="R.Vishnu">
             <h5><span>Vishnu</span></h5>
             <p>Software Developer</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="team-card">
-            <img src="vignesh.jpg" alt="Example Developer">
+            <img src="src/vignesh.jpg" alt="Example Developer">
             <h5><span>Vignesh</span></h5>
             <p>Software Developer</p>
           </div>
@@ -384,35 +403,35 @@
       <div class="row g-4 justify-content-center">
         <div class="col-md-3">
           <div class="team-card">
-            <img src="santhosh.png" alt="R.Rohini">
+            <img src="src/santhosh.png" alt="R.Rohini">
             <h5><span>Santhosh</span></h5>
             <p>Web Developer</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="team-card">
-            <img src="shalini.jpg" alt="R.Arpita">
+            <img src="src/shalini.jpg" alt="R.Arpita">
             <h5><span>Shaalini</span></h5>
             <p>Web Developer</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="team-card">
-            <img src="rohini.jpg" alt="P.Aravindh Kumar">
+            <img src="src/rohini.jpg" alt="P.Aravindh Kumar">
             <h5><span>Rohini</span></h5>
             <p>Web Developer</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="team-card">
-            <img src="arpita.png" alt="Shalini">
+            <img src="src/arpita.png" alt="Shalini">
             <h5><span>Arpita</span></h5>
             <p>Web Developer</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="team-card">
-            <img src="aravindh.jpg" alt="N.Santhosh">
+            <img src="src/aravindh.jpg" alt="N.Santhosh">
             <h5><span>Aravindh kumar</span></h5>
             <p>Web Developer</p>
           </div>
@@ -440,26 +459,26 @@
 
   <!-- Loading Spinner Script -->
   <script>
-    // Show loading spinner
-    const loadingSpinner = document.createElement('div');
-    loadingSpinner.className = 'loading-spinner';
-    loadingSpinner.innerHTML = `
-      <div class="spinner-container">
-        <div class="spinner-circle"></div>
-        <div class="spinner-logo"></div>
-      </div>
-    `;
-    document.body.appendChild(loadingSpinner);
+    // Remove loading spinner
+    // const loadingSpinner = document.createElement('div');
+    // loadingSpinner.className = 'loading-spinner';
+    // loadingSpinner.innerHTML = `
+    //   <div class="spinner-container">
+    //     <div class="spinner-circle"></div>
+    //     <div class="spinner-logo"></div>
+    //   </div>
+    // `;
+    // document.body.appendChild(loadingSpinner);
 
     // Hide loading spinner when page is fully loaded
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        loadingSpinner.classList.add('hidden');
-        setTimeout(() => {
-          loadingSpinner.remove();
-        }, 500);
-      }, 1000);
-    });
+    // window.addEventListener('load', () => {
+    //   setTimeout(() => {
+    //     loadingSpinner.classList.add('hidden');
+    //     setTimeout(() => {
+    //       loadingSpinner.remove();
+    //     }, 500);
+    //   }, 1000);
+    // });
   </script>
 </body>
 </html>
